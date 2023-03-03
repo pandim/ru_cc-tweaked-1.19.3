@@ -1,0 +1,147 @@
+Русифицируем принты и комменты, сохраняем и читаем файлы в Windows-1251.
+
+При вводе символа и клипборда если вводятся русские символы - переводим из уникода в ISO_8859_1. Три шага.
+
+01. Меняем шрифт (добавили русские буквы).
+...CC-Tweaked-mc-1.19.x\projects\common\src\main\resources\assets\computercraft\textures\gui\term_font.png
+
+02. Сохранять (и читать) надо в ISO_8859_1 (по сути Windows-1251) (менять в 3 файлах)
+
+...CC-Tweaked-mc-1.19.x\projects\core\src\main\java\dan200\computercraft\core\apis\handles\EncodedWritableHandle.java
+
+    public static BufferedWriter openUtf8(WritableByteChannel channel) {
+        return open(channel, StandardCharsets.UTF_8);
+    }
+    public static BufferedWriter openISO_8859_1( WritableByteChannel channel ) {  // это добавили
+        return open(channel, StandardCharsets.ISO_8859_1);                        //
+    }                                                                             //
+
+...CC-Tweaked-mc-1.19.x\projects\core\src\main\java\dan200\computercraft\core\apis\handles\EncodedReadableHandle.java
+
+    public static BufferedReader openUtf8(ReadableByteChannel channel) {
+        return open(channel, StandardCharsets.UTF_8);
+    }
+    public static BufferedReader openISO_8859_1( ReadableByteChannel channel )  {   // это добавили
+        return open( channel, StandardCharsets.ISO_8859_1 );                        //
+    }                                                                               //
+
+...CC-Tweaked\original-CC-Tweaked-mc-1.19.x\projects\core\src\main\java\dan200\computercraft\core\apis\FSAPI.java
+
+    @LuaFunction
+    public final Object[] open(String path, String mode) throws LuaException {
+        try (var ignored = environment.time(Metrics.FS_OPS)) {
+            switch (mode) {
+                case "r" -> {
+                    // Open the file for reading, then create a wrapper around the reader
+                    //var reader = getFileSystem().openForRead(path, EncodedReadableHandle::openUtf8);      // убрали
+                    //return new Object[]{ new EncodedReadableHandle(reader.get(), reader) };               //
+                    var reader = getFileSystem().openForRead(path, EncodedReadableHandle::openISO_8859_1);  // добавили
+                    return new Object[]{ new EncodedReadableHandle(reader.get(), reader) };                 //
+
+                }
+                case "w" -> {
+                    // Open the file for writing, then create a wrapper around the writer
+                    //var writer = getFileSystem().openForWrite(path, false, EncodedWritableHandle::openUtf8);     // убрали
+                    //return new Object[]{ new EncodedWritableHandle(writer.get(), writer) };                      //
+                    var writer = getFileSystem().openForWrite(path, false, EncodedWritableHandle::openISO_8859_1); // добавили
+                    return new Object[]{ new EncodedWritableHandle(writer.get(), writer) };                        //
+                }
+                case "a" -> {
+                    // Open the file for appending, then create a wrapper around the writer
+                    //var writer = getFileSystem().openForWrite(path, true, EncodedWritableHandle::openUtf8);
+                    //return new Object[]{ new EncodedWritableHandle(writer.get(), writer) };
+                    var writer = getFileSystem().openForWrite(path, true, EncodedWritableHandle::openISO_8859_1);
+                    return new Object[]{ new EncodedWritableHandle(writer.get(), writer) };
+                }
+
+
+03. Ввод с клавиатуры и из буфера обмена надо преобразовать в Windows-1251 (ISO_8859_1) (меняем два места в файле):
+			0x410 ... 0x44F  --> 0xC0 ... 0xFF : "А ... Я, а ... я"
+			0x401 --> 0xA8 : 'Ё'
+			0x451 --> 0xB8 : 'ё'
+			Надо покапаться, может ещё чего надо из знаков.
+
+...CC-Tweaked-mc-1.19.x\projects\common\src\client\java\dan200\computercraft\client\gui\widgets\TerminalWidget.java
+		(раньше назывался WidgetTerminal.java)
+
+    @Override
+    public boolean charTyped(char ch, int modifiers) {
+        if (ch >= 0x410 && ch <= 0x44F) {ch = (char) (ch - 0x350);}; // 'А-я'   - Добавили
+        if (ch == 0x401){ ch = (char) 0xA8;};                        // 'Ё'
+        if (ch == 0x451){ ch = (char) 0xB8;};                        // 'ё'
+
+        if (ch >= 32 && ch <= 126 || ch >= 160 && ch <= 255) {  // Не знаю, зачем вырезали середину
+            // Queue the char event for any printable chars in byte range
+            computer.queueEvent("char", new Object[]{ Character.toString(ch) });
+        }
+
+        return true;
+    }
+...
+    @Override
+    public boolean keyPressed(int key, int scancode, int modifiers) {
+        if (key == GLFW.GLFW_KEY_ESCAPE) return false;
+        if ((modifiers & GLFW.GLFW_MOD_CONTROL) != 0) {
+            switch (key) {
+                case GLFW.GLFW_KEY_T -> {
+                    if (terminateTimer < 0) terminateTimer = 0;
+                }
+                case GLFW.GLFW_KEY_S -> {
+                    if (shutdownTimer < 0) shutdownTimer = 0;
+                }
+                case GLFW.GLFW_KEY_R -> {
+                    if (rebootTimer < 0) rebootTimer = 0;
+                }
+                case GLFW.GLFW_KEY_V -> {
+                    // Ctrl+V for paste
+                    var clipboard = Minecraft.getInstance().keyboardHandler.getClipboard();
+                    if (clipboard != null) {
+                        // Clip to the first occurrence of \r or \n
+                        var newLineIndex1 = clipboard.indexOf("\r");
+                        var newLineIndex2 = clipboard.indexOf("\n");
+                        if (newLineIndex1 >= 0 && newLineIndex2 >= 0) {
+                            clipboard = clipboard.substring(0, Math.min(newLineIndex1, newLineIndex2));
+                        } else if (newLineIndex1 >= 0) {
+                            clipboard = clipboard.substring(0, newLineIndex1);
+                        } else if (newLineIndex2 >= 0) {
+                            clipboard = clipboard.substring(0, newLineIndex2);
+                        }
+
+                        // Filter the string
+                        clipboard = SharedConstants.filterText(clipboard);
+
+                        char [] c0 = clipboard.toCharArray();                       // Вот это добавили                          
+                        for (int i = 0; i < c0.length; i++){                        //
+                            if (c0[i] >= 0x410 && c0[i] <= 0x44F){                  //
+                                c0[i] = (char) (c0[i] - 0x350);                     // 0x410 ... 0x44F - 'А-я'
+							}                                                       // 
+                            if (c0[i] == 0x401) c0[i] = 0xA8;                       // 0x401 - 'Ё'
+                            if (c0[i] == 0x451) c0[i] = 0xB8;                       // 0x451 - 'ё'
+                        }                                                           //
+                        clipboard = String.valueOf(c0);                             //
+
+                        if (!clipboard.isEmpty()) {
+                            // Clip to 512 characters and queue the event
+                            if (clipboard.length() > 512) clipboard = clipboard.substring(0, 512);
+                            computer.queueEvent("paste", new Object[]{ clipboard });
+                        }
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

@@ -65,9 +65,9 @@ public class TerminalWidget extends AbstractWidget {
 
     @Override
     public boolean charTyped(char ch, int modifiers) {
-        if (ch >= 0x410 && ch <= 0x44F) {ch = (char) (ch - 0x350);};
-        if (ch == 0x401){ ch = (char) 0xA8;}; // 'Ё'
-        if (ch == 0x451){ ch = (char) 0xB8;}; // 'ё'
+        if (ch >= 0x410 && ch <= 0x44F) {ch = (char) (ch - 0x350);}// 'А-я'
+        if (ch == 0x401){ ch = (char) 0xA8;}// 'Ё'
+        if (ch == 0x451){ ch = (char) 0xB8;}// 'ё'
 
         if (ch >= 32 && ch <= 126 || ch >= 160 && ch <= 255) {
             // Queue the char event for any printable chars in byte range
@@ -111,7 +111,7 @@ public class TerminalWidget extends AbstractWidget {
 
                         char [] c0 = clipboard.toCharArray();
                         for (int i = 0; i < c0.length; i++){
-                            if (c0[i] >= 0x410 && c0[i] <= 0x44F){ c0[i] = (char) (c0[i] - 0x350);}; // 0x410 ... 0x44F
+                            if (c0[i] >= 0x410 && c0[i] <= 0x44F){ c0[i] = (char) (c0[i] - 0x350);}// 0x410 ... 0x44F
                             if (c0[i] == 0x401) c0[i] = 0xA8; //0x401 - 'Ё'
                             if (c0[i] == 0x451) c0[i] = 0xB8; //0x451 - 'ё'
                         }
