@@ -1,0 +1,9 @@
+rename renames a file or directory.
+
+ex:
+"rename foo bar" renames the file "foo" to "bar".
+
+rename переименовывает файл или каталог.
+
+Использование:
+«rename foo bar» переименовывает файл «foo» в «bar».

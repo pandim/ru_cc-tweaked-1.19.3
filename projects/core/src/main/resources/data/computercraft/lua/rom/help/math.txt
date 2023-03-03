@@ -1,0 +1,5 @@
+math is a standard Lua5.1 API.
+Refer to http://www.lua.org/manual/5.1/ for more information.
+
+math Ч это стандартный API Lua5.1.
+ќбратитесь к http://www.lua.org/manual/5.1/ дл€ получени€ дополнительной информации.

@@ -1,0 +1,11 @@
+drive tells you which disk drive the current or specified directory is located in.
+
+ex:
+"drive" tell you the disk drive of the current directory.
+"drive foo" tells you the disk drive of the subdirectory "foo"
+
+drive сообщает вам, на каком диске находится текущий или указанный каталог.
+
+Использование:
+«drive» сообщает вам диск текущего каталога.
+"drive foo" сообщает вам диск подкаталога "foo"

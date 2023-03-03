@@ -1,0 +1,19 @@
+label gets or sets the label of the Computer, or of Floppy Disks in attached disk drives.
+
+ex:
+"label get" prints the label of the computer.
+"label get left" prints the label of the disk in the left drive.
+"label set "My Computer"" set the label of the computer to "My Computer".
+"label set left "My Programs"" - sets the label of the disk in the left drive to "My Programs".
+"label clear" clears the label of the computer.
+"label clear left" clears the label of the disk in the left drive.
+
+label получает или задает метку компьютера или гибких дисков в подключенных дисководах.
+
+Использование:
+"label get" печатает метку компьютера.
+"label get left" печатает метку диска в левом приводе.
+«label set "My Computer"» устанавливает метку компьютера как «My Computer».
+"label set left "My Programs"" - устанавливает метку диска в левом дисководе на "My Programs".
+"label clear" очищает метку компьютера.
+«label clear left» очищает метку диска в левом дисководе.

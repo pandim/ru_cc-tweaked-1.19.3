@@ -1,0 +1,3 @@
+hello prints the text "Hello World!" to the screen.
+
+hello печатает текст "Hello World!" на экран.

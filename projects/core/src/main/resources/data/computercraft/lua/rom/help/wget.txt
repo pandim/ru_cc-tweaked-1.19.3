@@ -1,0 +1,17 @@
+wget is a program for downloading files from the internet. This is useful for downloading programs created by other players.
+If no filename is specified wget will try to determine the filename from the URL by stripping any anchors, parameters and trailing slashes and then taking everything remaining after the last slash.
+The HTTP API must be enabled in ComputerCraft.cfg to use this program.
+ex:
+"wget http://pastebin.com/raw/CxaWmPrX test" will download the file from the URL http://pastebin.com/raw/CxaWmPrX, and save it as "test".
+"wget http://example.org/test.lua/?foo=bar#qzu" will download the file from the URL http://example.org/test.lua/?foo=bar#qzu and save it as "test.lua"
+"wget http://example.org/" will download the file from the URL http://example.org and save it as "example.org"
+"wget run http://pastebin.com/raw/CxaWmPrX" will download the file from the URL http://pastebin.com/raw/CxaWmPrX and run it immediately.
+
+wget — программа для скачивания файлов из интернета. Это полезно для загрузки программ, созданных другими игроками.
+Если имя файла не указано, wget попытается определить имя файла по URL-адресу, удалив все привязки, параметры и завершающие косые черты, а затем взяв все, что осталось после последней косой черты.
+Для использования этой программы в ComputerCraft.cfg должен быть включен HTTP API.
+Использование:
+"wget http://pastebin.com/raw/CxaWmPrX test" загрузит файл с URL-адреса http://pastebin.com/raw/CxaWmPrX и сохранит его как «test».
+"wget http://example.org/test.lua/?foo=bar#qzu" загрузит файл с URL-адреса http://example.org/test.lua/?foo=bar#qzu и сохранит его как "test.lua"
+"wget http://example.org/" загрузит файл с URL-адреса http://example.org и сохранит его как «example.org».
+"wget run http://pastebin.com/raw/CxaWmPrX" загрузит файл с URL-адреса http://pastebin.com/raw/CxaWmPrX и немедленно запустит его.

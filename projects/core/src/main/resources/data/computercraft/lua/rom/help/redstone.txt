@@ -1,0 +1,19 @@
+The redstone program can be used to get, set or pulse redstone inputs and outputs from the computer.
+
+ex:
+"redstone probe" will list all the redstone inputs to the computer
+"redstone set left true" turns on the left redstone output.
+"redstone set right blue false" turns off the blue wire in the bundled cable on the right redstone output.
+"redstone pulse front 10 1" emits 10 one second redstone pulses on the front redstone output.
+
+Type "help redstoneapi" or "help rs" for information on the redstone Lua API.
+
+Программу Redstone можно использовать для получения, установки или импульсного ввода и вывода Redstone с компьютера.
+
+Использование:
+«redstone probe» выведет список всех входов красного камня на компьютер.
+«redstone set left true» включает левый выход красного камня.
+«redstone set right blue false» отключает синий провод в комплекте кабеля на правом выходе красного камня.
+«redstone pulse front 10 1» испускает 10 односекундных импульсов Redstone на переднем выходе Redstone.
+
+Тип «help redstoneapi» или «help rs» для получения информации о API Redstone Lua.

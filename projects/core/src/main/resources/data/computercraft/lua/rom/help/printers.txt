@@ -1,0 +1,25 @@
+The Printer is a peripheral device available for CraftOS. Type "help peripheral" to learn about using the Peripheral API to connect with peripherals. When a Printer is connected, peripheral.getType() will return "printer".
+
+Methods exposed by the Printer:
+getInkLevel()
+getPaperLevel()
+newPage()
+setPageTitle( title )
+getPageSize()
+setCursorPos( x, y )
+getCursorPos()
+write( text )
+endPage()
+
+Принтер — это периферийное устройство, доступное для CraftOS. Введите «help peripheral», чтобы узнать об использовании периферийного API для подключения к периферийным устройствам. Когда принтер подключен, peripheral.getType() вернет «printer».
+
+Методы, предоставляемые принтером:
+getInkLevel()
+getPaperLevel()
+newPage()
+setPageTitle( title )
+getPageSize()
+setCursorPos( x, y )
+getCursorPos()
+write( text )
+endPage()

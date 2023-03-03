@@ -1,0 +1,5 @@
+multishell is the toplevel program on Advanced Computers which manages background tabs.
+Type "help shellapi" for information about the shell lua api.
+
+multishell — это программа верхнего уровня на Advanced Computers, которая управляет фоновыми вкладками.
+Наберите «help shellapi» для получения информации об оболочке lua api.

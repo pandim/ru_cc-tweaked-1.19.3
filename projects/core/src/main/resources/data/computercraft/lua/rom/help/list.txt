@@ -1,0 +1,3 @@
+ls will list all the directories and files in the current location. Use "type" to find out if an item is a file or a directory.
+
+ls выведет список всех каталогов и файлов в текущем местоположении. Используйте «type», чтобы узнать, является ли элемент файлом или каталогом.

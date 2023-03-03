@@ -1,0 +1,3 @@
+shutdown will turn off the computer.
+
+shutdown выключит компьютер.

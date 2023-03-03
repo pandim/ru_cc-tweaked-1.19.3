@@ -1,0 +1,11 @@
+fg is a program for Advanced Computers which opens a new tab in the foreground.
+
+ex:
+"fg" will open a foreground tab running the shell
+"fg worm" will open a foreground tab running the "worm" program
+
+fg Ч это программа дл€ продвинутых компьютеров, котора€ открывает новую вкладку на переднем плане.
+
+»спользование:
+Ђfgї откроет вкладку переднего плана, на которой запущена оболочка
+Ђfg wormї откроет вкладку переднего плана, на которой запущена программа Ђwormї.

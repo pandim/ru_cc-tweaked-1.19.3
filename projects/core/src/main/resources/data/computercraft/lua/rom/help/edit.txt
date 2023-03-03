@@ -1,0 +1,9 @@
+edit is a text editor for creating or modifying programs or text files. After creating a program with edit, type its filename in the shell to run it. You can open any of the builtin programs with edit to learn how to program.
+
+ex:
+"edit hello" opens a file called "hello" for editing.
+
+edit — текстовый редактор для создания или изменения программ или текстовых файлов. После создания программы с помощью редактирования введите имя файла в оболочке, чтобы запустить ее. Вы можете открыть любую из встроенных программ с помощью редактирования, чтобы научиться программировать.
+
+Использование:
+«edit hello» открывает файл с именем «hello» для редактирования.

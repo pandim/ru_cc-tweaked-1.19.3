@@ -1,0 +1,9 @@
+apis lists the currently loaded APIs available to programs in CraftOS.
+
+Type "help <api>" to see help for a specific api.
+Call os.loadAPI( path ) to load extra apis.
+
+apis перечисляет загруженные в данный момент API, доступные для программ в CraftOS.
+
+Введите «help <api>», чтобы увидеть справку по конкретному API.
+Вызовите os.loadAPI(path) для загрузки дополнительных API.

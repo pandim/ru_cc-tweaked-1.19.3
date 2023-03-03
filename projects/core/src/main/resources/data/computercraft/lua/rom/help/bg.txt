@@ -1,0 +1,11 @@
+bg is a program for Advanced Computers which opens a new tab in the background.
+
+ex:
+"bg" will open a background tab running the shell
+"bg worm" will open a background tab running the "worm" program
+
+bg Ч это программа дл€ продвинутых компьютеров, котора€ открывает новую вкладку в фоновом режиме.
+
+использование:
+Ђbgї откроет фоновую вкладку с запущенной оболочкой.
+Ђbg wormї откроет фоновую вкладку, на которой запущена программа Ђwormї.

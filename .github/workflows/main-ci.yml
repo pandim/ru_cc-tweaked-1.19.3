@@ -1,0 +1,98 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      with:
+        cache-read-only: ${{ !startsWith(github.ref, 'refs/heads/mc-') }}
+
+    - name: Disable Gradle daemon
+      run: |
+        mkdir -p ~/.gradle
+        echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
+
+    - name: Build with Gradle
+      run: |
+        ./gradlew assemble || ./gradlew assemble
+        ./gradlew downloadAssets || ./gradlew downloadAssets
+        ./gradlew build
+
+    - name: Run client tests
+      run: ./gradlew runGametestClient # Not checkClient, as no point running rendering tests.
+      # These are a little flaky on GH actions: its useful to run them, but don't break the build.
+      continue-on-error: true
+
+    - name: Prepare Jars
+      run: |
+        # Find the main jar and append the git hash onto it.
+        mkdir -p jars
+        find projects/forge/build/libs projects/fabric/build/libs -type f -regex '.*[0-9.]+\(-SNAPSHOT\)?\.jar$' -exec bash -c 'cp {} "jars/$(basename {} .jar)-$(git rev-parse HEAD).jar"' \;
+
+    - name: Upload Jar
+      uses: actions/upload-artifact@v3
+      with:
+        name: CC-Tweaked
+        path: ./jars
+
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+
+    - name: Parse test reports
+      run: ./tools/parse-reports.py
+      if: ${{ failure() }}
+
+    - name: Run linters
+      uses: pre-commit/action@v3.0.0
+
+  build-core:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - name: Windows
+          uses: windows-latest
+
+        - name: macOS
+          uses: macos-latest
+
+    name: Test on ${{ matrix.name }}
+    runs-on: ${{ matrix.uses }}
+
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      with:
+        cache-read-only: ${{ !startsWith(github.ref, 'refs/heads/mc-') }}
+
+    - name: Run tests
+      run: |
+        ./gradlew --configure-on-demand :core:test
+
+    - name: Parse test reports
+      run: python3 ./tools/parse-reports.py
+      if: ${{ failure() }}

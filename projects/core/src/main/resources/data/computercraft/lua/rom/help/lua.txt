@@ -1,0 +1,3 @@
+lua is an interactive prompt for the lua programming language. It's a useful tool for learning the language.
+
+lua — это интерактивная подсказка для языка программирования lua. Это полезный инструмент для изучения языка.

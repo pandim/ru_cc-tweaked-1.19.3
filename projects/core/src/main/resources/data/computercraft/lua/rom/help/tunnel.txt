@@ -1,0 +1,9 @@
+tunnel is a program for Mining Turtles. Tunnel will mine a 3x2 tunnel of the depth specified.
+
+ex:
+"tunnel 20" will tunnel a tunnel 20 blocks long.
+
+tunnel Ч это программа дл€ майнинг черепах. Tunnel будет копать туннель 3x2 указанной глубины.
+
+»спользование:
+Ђtunnel 20ї проложит туннель длиной 20 блоков.

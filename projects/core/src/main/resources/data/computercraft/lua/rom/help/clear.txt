@@ -1,0 +1,13 @@
+clear clears the screen and/or resets the palette.
+ex:
+"clear" clears the screen, but keeps the palette.
+"clear screen" does the same as "clear"
+"clear palette" resets the palette, but doesn't clear the screen
+"clear all" clears the screen and resets the palette
+
+clear очищает экран и/или сбрасывает палитру.
+использовать:
+«clear» очищает экран, но сохраняет палитру.
+"clear screen" делает то же самое, что и "clear"
+«clear palette» сбрасывает палитру, но не очищает экран
+«clear all» очищает экран и сбрасывает палитру

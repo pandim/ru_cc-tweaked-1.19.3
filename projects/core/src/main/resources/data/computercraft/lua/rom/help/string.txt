@@ -1,0 +1,5 @@
+string is a standard Lua5.1 API.
+Refer to http://www.lua.org/manual/5.1/ for more information.
+
+string является стандартным API Lua5.1.
+Обратитесь к http://www.lua.org/manual/5.1/ для получения дополнительной информации.

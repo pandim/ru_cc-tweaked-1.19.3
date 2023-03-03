@@ -1,0 +1,31 @@
+ComputerCraft was created by Daniel "dan200" Ratcliffe, with additional code by Aaron "Cloudy" Mills.
+Thanks to nitrogenfingers, GopherATL and RamiLego for program contributions.
+Thanks to Mojang, the Forge team, and the MCP team.
+Uses LuaJ from http://luaj.sourceforge.net/
+
+The ComputerCraft 1.76 update was sponsored by MinecraftU and Deep Space.
+Visit http://www.minecraftu.org and http://www.deepspace.me/space-cadets to find out more.
+
+Join the ComputerCraft community online at https://computercraft.cc
+Follow @DanTwoHundred on Twitter!
+
+To help contribute to ComputerCraft, browse the source code at https://github.com/dan200/ComputerCraft.
+
+GitHub Contributors:
+${gitcontributors}
+
+ComputerCraft был создан Дэниелом «dan200» Рэтклиффом с дополнительным кодом Аароном «Клауди» Миллсом.
+Спасибо nitrogenfingers, GopherATL и RamiLego за участие в программе.
+Спасибо Mojang, команде Forge и команде MCP.
+Использует LuaJ с http://luaj.sourceforge.net/
+
+Обновление ComputerCraft 1.76 спонсировали MinecraftU и Deep Space.
+Посетите http://www.minecraftu.org и http://www.deepspace.me/space-cadets, чтобы узнать больше.
+
+Присоединяйтесь к онлайн-сообществу ComputerCraft по адресу https://computercraft.cc.
+Подпишитесь на @DanTwoHundred в Твиттере!
+
+Чтобы внести свой вклад в ComputerCraft, просмотрите исходный код по адресу https://github.com/dan200/ComputerCraft.
+
+Участники GitHub:
+${gitcontributors}

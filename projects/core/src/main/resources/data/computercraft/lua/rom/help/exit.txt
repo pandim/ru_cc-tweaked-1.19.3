@@ -1,0 +1,3 @@
+exit will exit the current shell.
+
+exit закроет текущую оболочку.

@@ -1,0 +1,11 @@
+equip is a program for Turtles and Pocket Computer. equip will equip an item from the Turtle's inventory for use as a tool of peripheral. On a Pocket Computer you don't need to write a side.
+
+ex:
+"equip 5 left" will equip the item from slot 5 of the turtle onto the left side of the turtle
+"equip" on a Pocket Computer will equip the first item from your inventory.
+
+equip это программа для черепах и карманного компьютера. Одеть предмет из инвентаря Черепахи для использования в качестве инструмента. На карманном компьютере вам не нужно писать сторону.
+
+бывший:
+«equip 5 left» наденет предмет из 5-го слота черепахи на левую сторону черепахи.
+«equip» на карманном компьютере экипирует первый предмет из вашего инвентаря.

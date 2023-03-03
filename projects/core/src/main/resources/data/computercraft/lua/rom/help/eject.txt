@@ -1,0 +1,9 @@
+eject ejects the contents of an attached disk drive.
+
+ex:
+"eject left" ejects the contents of the disk drive to the left of the computer.
+
+eject извлекает содержимое подключенного диска.
+
+Использование:
+"eject left" извлекает содержимое дисковода слева от компьютера.

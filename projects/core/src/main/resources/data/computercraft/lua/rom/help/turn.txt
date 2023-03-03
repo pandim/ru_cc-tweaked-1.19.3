@@ -1,0 +1,13 @@
+turn is a program for Turtles, used to turn the turtle around without programming. It accepts one or more commands as a direction and a number of turns. The "go" program can also be used for turning.
+
+ex:
+"turn left" turns the turtle 90 degrees left.
+"turn right 2" turns the turtle 180 degrees right.
+"turn left 2 right" turns left 180 degrees, then right 90 degrees.
+
+Turn — это программа для черепах, используемая для поворота черепахи без программирования. Он принимает одну или несколько команд в виде направления и количества поворотов. Программа "go" также может использоваться для поворота.
+
+Использование:
+«turn left» поворачивает черепаху на 90 градусов влево.
+«turn right 2» поворачивает черепаху на 180 градусов вправо.
+«turn left 2 right» поворачивает налево на 180 градусов, затем направо на 90 градусов.

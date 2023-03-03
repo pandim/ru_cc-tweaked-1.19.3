@@ -1,0 +1,13 @@
+go is a program for Turtles, used to control the turtle without programming. It accepts one or more commands as a direction followed by a distance.
+
+ex:
+"go forward" moves the turtle 1 space forward.
+"go forward 3" moves the turtle 3 spaces forward.
+"go forward 3 up left 2" moves the turtle 3 spaces forward, 1 spaces up, then left 180 degrees.
+
+go — это программа для черепах, используемая для управления черепахой без программирования. Он принимает одну или несколько команд в виде направления, за которым следует расстояние.
+
+Использование:
+«go forward» перемещает черепаху на 1 позицию вперед.
+«go forward 3» перемещает черепаху на 3 клетки вперед.
+«go forward 3 up left 2» перемещает черепаху на 3 клетки вперед, на 1 клетку вверх, а затем на 180 градусов влево.

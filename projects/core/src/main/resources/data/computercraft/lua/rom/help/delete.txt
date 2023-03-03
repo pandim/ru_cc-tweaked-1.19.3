@@ -1,0 +1,11 @@
+rm deletes a file or a directory and its contents.
+
+ex:
+"rm foo" will delete the file foo.
+"rm disk/*" will delete the contents of a disk.
+
+rm удаляет файл или каталог и его содержимое.
+
+Использование:
+«rm foo» удалит файл foo.
+"rm disk/*" удалит содержимое диска.

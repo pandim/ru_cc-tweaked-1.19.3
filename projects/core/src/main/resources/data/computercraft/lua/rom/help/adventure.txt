@@ -1,0 +1,4 @@
+adventure is a text adventure game for CraftOS. To navigate around the world of adventure, type simple instructions to the interpreter, for example: "go north", "punch tree", "craft planks", "mine coal with pickaxe", "hit creeper with sword"
+
+adventure — текстовая приключенческая игра для CraftOS. Чтобы ориентироваться в мире приключений, набирайте переводчику простые инструкции, например: "идти на север", "пробить дерево", "скрафтить доски", "добыть уголь киркой", "ударить крипера мечом"
+

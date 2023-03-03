@@ -1,0 +1,12 @@
+craft is a program for Crafty Turtles. Craft will craft a stack of items using the current inventory.
+
+ex:
+"craft all" will craft as many items as possible
+"craft 5" will craft at most 5 times
+
+
+craft Ч это программа дл€ Crafty Turtles.  рафт создаст стопку предметов, использу€ текущий инвентарь.
+
+»спользование:
+Ђcraft allї создаст как можно больше предметов.
+"craft 5" создаст не более 5 предметов

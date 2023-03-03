@@ -1,0 +1,13 @@
+cd changes the directory you're in.
+
+ex:
+"cd rom" will move to "rom" folder.
+"cd .." will move up one folder.
+"cd /" will move to the root.
+
+cd изменяет каталог, в котором вы находитесь.
+
+использование:
+«cd rom» переместится в папку «rom».
+"cd .." переместит на одну папку вверх.
+«cd /» переместится в корень.

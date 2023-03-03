@@ -1,0 +1,13 @@
+alias assigns shell commands to run other programs.
+
+ex:
+"alias dir ls" will make the "dir" command run the "ls" program
+"alias dir" will remove the alias set on "dir"
+"alias" will list all current aliases.
+
+alias назначает команды оболочки для запуска других программ.
+
+где:
+"alias dir ls" заставит команду "dir" запускать программу "ls"
+"alias dir" удалит псевдоним, установленный на "dir"
+"alias" перечислит все текущие псевдонимы.

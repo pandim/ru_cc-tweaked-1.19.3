@@ -1,0 +1,19 @@
+The keys API contains constants for all the key codes that can be returned by the "key" event:
+
+Example usage:
+local sEvent, nKey = os.pullEvent()
+if sEvent == "key" and nKey == keys.enter then
+   -- Do something
+end
+
+See http://www.minecraftwiki.net/wiki/Key_codes, or the source code, for a complete reference.
+
+API клавиатуры содержит константы для всех кодов клавиш, которые могут быть возвращены событием «key»:
+
+Пример использования:
+local sEvent, nKey = os.pullEvent()
+if sEvent == "key" and nKey == keys.enter then
+   -- Делаем что-то
+end
+
+См. http://www.minecraftwiki.net/wiki/Key_codes или исходный код для полной справки.

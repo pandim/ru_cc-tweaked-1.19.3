@@ -1,0 +1,5 @@
+io is a standard Lua5.1 API, reimplemented for CraftOS. Not all the features are availiable.
+Refer to http://www.lua.org/manual/5.1/ for more information.
+
+io — это стандартный API Lua5.1, переработанный для CraftOS. Не все функции доступны.
+Обратитесь к http://www.lua.org/manual/5.1/ для получения дополнительной информации.

@@ -1,0 +1,11 @@
+mkdir creates a directory in the current location.
+
+ex:
+"mkdir foo" creates a directory named "foo".
+"mkdir ../foo" creates a directory named "foo" in the directory above the current directory.
+
+mkdir создает каталог в текущем местоположении.
+
+Использование:
+«mkdir foo» создает каталог с именем «foo».
+«mkdir ../foo» создает каталог с именем «foo» в каталоге над текущим каталогом.

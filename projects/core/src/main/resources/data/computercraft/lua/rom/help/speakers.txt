@@ -1,0 +1,20 @@
+The Speaker is a peripheral device available for CraftOS. Type "help peripheral" to learn about using the Peripheral API to connect with peripherals. When a Speaker is connected, peripheral.getType() will return "speaker".
+
+Methods exposed by the Speaker:
+playSound( sResourceName, nVolume, nPitch )
+playNote( sInstrumentName, nVolume, nPitch )
+
+Resource name is the same as used by the /playsound command, such as "minecraft:entity.cow.ambient".
+Instruments are as follows: "harp", "bass", "snare", "hat", and "basedrum" with the addition of "flute", "bell", "chime", and "guitar" in Minecraft versions 1.12 and above.
+Ticks is the amount of times a noteblock has been tuned (right clicked).
+
+Speaker Ч это периферийное устройство, доступное дл€ CraftOS. ¬ведите Ђhelp peripheralї, чтобы узнать об использовании периферийного API дл€ подключени€ к периферийным устройствам.  огда динамик подключен, peripheral.getType() вернет Ђspeakerї.
+
+ћетоды, раскрытые спикером:
+playSound(sResourceName, nVolume, nPitch)
+playNote(sInstrumentName, nVolume, nPitch)
+
+»м€ ресурса такое же, как и в команде /playsound, например, Ђminecraft:entity.cow.ambientї.
+»нструменты следующие: Ђарфаї, Ђбасї, Ђмалый барабанї, Ђшл€паї и Ђбазэрумї с добавлением Ђфлейтыї, Ђколокольчикаї, Ђзвонкаї и Ђгитарыї в верси€х Minecraft 1.12 и далее.
+("harp", "bass", "snare", "hat", and "basedrum" -- "flute", "bell", "chime", and "guitar")
+“ики Ч это количество раз, когда нотный блок был нажат (щелчок правой кнопкой мыши).

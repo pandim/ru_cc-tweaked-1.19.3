@@ -1,0 +1,15 @@
+Functions in the bit manipulation API (NOTE: This API will be removed in a future version. Use bit32 instead):
+bit.bnot(n)          -- bitwise not (~n)
+bit.band(m, n)       -- bitwise and (m & n)
+bit.bor(m, n)        -- bitwise or (m | n)
+bit.bxor(m, n)       -- bitwise xor (m ^ n)
+bit.brshift(n, bits) -- right shift (n >> bits)
+bit.blshift(n, bits) -- left shift (n << bits)
+
+Функции в API манипулирования битами (ПРИМЕЧАНИЕ. Этот API будет удален в будущей версии. Вместо этого используйте бит32):
+bit.bnot(n) -- побитовое НЕ (~n)
+bit.band(m, n) -- побитовое И (m & n)
+bit.bor(m, n) -- побитовое ИЛИ (m | n)
+bit.bxor(m, n) -- побитовое исключающее ИЛИ (m ^ n)
+bit.brshift(n, бит) -- сдвиг вправо (n >> бит)
+bit.blshift(n, бит) -- сдвиг влево (n << бит)
